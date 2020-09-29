@@ -1,15 +1,15 @@
-import * as React from 'react';
-import{TextInput,View,StyleSheet,TouchableOpacity,KeyboardAvoidingView,ToastAndroid} from 'react-native';
+import  React from 'react';
+import {TextInput,View,StyleSheet,TouchableOpacity,KeyboardAvoidingView,ToastAndroid,Text} from 'react-native';
 import {Header} from 'react-native-elements';
-import firebase from 'firebase';
 
 
-SubmitStory=async({})=>{
-   
+
+SubmitStory=async()=>{
+    ToastAndroid.show("Your Story has been submitted",ToastAndroid.SHORT)
   }
 
 
-export default class WriteStoryScreen extends React.component{
+export default class WriteStoryScreen extends React.Component{
     render(){
         return(
         <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
@@ -35,8 +35,7 @@ export default class WriteStoryScreen extends React.component{
                 />
 
             <TouchableOpacity style={styles.button} 
-            onPress={this.SubmitStory,
-                ToastAndroid.show("Your Story has been submitted",ToastAndroid.SHORT)} 
+            onPress={this.SubmitStory} 
             >
 
                 <Text>Submit</Text>
